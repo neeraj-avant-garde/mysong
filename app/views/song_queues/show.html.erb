@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @song_queue.host_id %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @song_queue.song_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @song_queue.user_id %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @song_queue.message %>
+</p>
+
+<p>
+  <strong>Message approved:</strong>
+  <%= @song_queue.message_approved %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @song_queue.priority %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @song_queue.status %>
+</p>
+
+<%= link_to 'Edit', edit_song_queue_path(@song_queue) %> |
+<%= link_to 'Back', song_queues_path %>

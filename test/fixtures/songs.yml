@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  host_id: 1
+  title: MyString
+  artist: MyString
+  album: MyString
+  length: 1
+
+two:
+  host_id: 1
+  title: MyString
+  artist: MyString
+  album: MyString
+  length: 1

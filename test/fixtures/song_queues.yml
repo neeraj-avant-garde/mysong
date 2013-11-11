@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  host_id: 1
+  song_id: 1
+  user_id: 1
+  message: MyString
+  message_approved: false
+  priority: MyString
+  status: MyString
+
+two:
+  host_id: 1
+  song_id: 1
+  user_id: 1
+  message: MyString
+  message_approved: false
+  priority: MyString
+  status: MyString

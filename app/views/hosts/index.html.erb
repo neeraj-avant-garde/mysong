@@ -1,0 +1,57 @@
+<h1>Listing hosts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Address</th>
+      <th>Area</th>
+      <th>City</th>
+      <th>Verification</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Subscription end</th>
+      <th>Max requests</th>
+      <th>Max queue</th>
+      <th>Proximity</th>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Slogan</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosts.each do |host| %>
+      <tr>
+        <td><%= host.guid %></td>
+        <td><%= host.email %></td>
+        <td><%= host.password %></td>
+        <td><%= host.address %></td>
+        <td><%= host.area %></td>
+        <td><%= host.city %></td>
+        <td><%= host.verification %></td>
+        <td><%= host.longitude %></td>
+        <td><%= host.latitude %></td>
+        <td><%= host.subscription_end %></td>
+        <td><%= host.max_requests %></td>
+        <td><%= host.max_queue %></td>
+        <td><%= host.proximity %></td>
+        <td><%= host.facebook %></td>
+        <td><%= host.twitter %></td>
+        <td><%= host.slogan %></td>
+        <td><%= link_to 'Show', host %></td>
+        <td><%= link_to 'Edit', edit_host_path(host) %></td>
+        <td><%= link_to 'Destroy', host, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Host', new_host_path %>

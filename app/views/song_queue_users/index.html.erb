@@ -1,0 +1,33 @@
+<h1>Listing song_queue_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song queue</th>
+      <th>User</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_queue_users.each do |song_queue_user| %>
+      <tr>
+        <td><%= song_queue_user.song_queue_id %></td>
+        <td><%= song_queue_user.user_id %></td>
+        <td><%= song_queue_user.like %></td>
+        <td><%= song_queue_user.dislike %></td>
+        <td><%= link_to 'Show', song_queue_user %></td>
+        <td><%= link_to 'Edit', edit_song_queue_user_path(song_queue_user) %></td>
+        <td><%= link_to 'Destroy', song_queue_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song queue user', new_song_queue_user_path %>

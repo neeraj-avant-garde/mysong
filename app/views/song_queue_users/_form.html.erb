@@ -1,0 +1,33 @@
+<%= form_for(@song_queue_user) do |f| %>
+  <% if @song_queue_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@song_queue_user.errors.count, "error") %> prohibited this song_queue_user from being saved:</h2>
+
+      <ul>
+      <% @song_queue_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :song_queue_id %><br>
+    <%= f.number_field :song_queue_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :like %><br>
+    <%= f.check_box :like %>
+  </div>
+  <div class="field">
+    <%= f.label :dislike %><br>
+    <%= f.check_box :dislike %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

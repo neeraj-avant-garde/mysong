@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song queue:</strong>
+  <%= @song_queue_user.song_queue_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @song_queue_user.user_id %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @song_queue_user.like %>
+</p>
+
+<p>
+  <strong>Dislike:</strong>
+  <%= @song_queue_user.dislike %>
+</p>
+
+<%= link_to 'Edit', edit_song_queue_user_path(@song_queue_user) %> |
+<%= link_to 'Back', song_queue_users_path %>

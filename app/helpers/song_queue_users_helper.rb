@@ -1,0 +1,2 @@
+module SongQueueUsersHelper
+end

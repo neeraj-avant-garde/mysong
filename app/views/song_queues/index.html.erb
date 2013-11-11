@@ -1,0 +1,39 @@
+<h1>Listing song_queues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Song</th>
+      <th>User</th>
+      <th>Message</th>
+      <th>Message approved</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_queues.each do |song_queue| %>
+      <tr>
+        <td><%= song_queue.host_id %></td>
+        <td><%= song_queue.song_id %></td>
+        <td><%= song_queue.user_id %></td>
+        <td><%= song_queue.message %></td>
+        <td><%= song_queue.message_approved %></td>
+        <td><%= song_queue.priority %></td>
+        <td><%= song_queue.status %></td>
+        <td><%= link_to 'Show', song_queue %></td>
+        <td><%= link_to 'Edit', edit_song_queue_path(song_queue) %></td>
+        <td><%= link_to 'Destroy', song_queue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song queue', new_song_queue_path %>
