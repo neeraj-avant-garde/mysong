@@ -32,7 +32,7 @@ class HostsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @host }
       else
         format.html { render action: 'new' }
-        format.json { render json: @host.errors, status: :unprocessable_entity }
+        format.json { render json: @host.errors, json: params, status: :unprocessable_entity }
       end
     end
   end
