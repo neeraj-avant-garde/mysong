@@ -14,6 +14,8 @@
 ActiveRecord::Schema.define(version: 20131111134916) do
 
   create_table "host_users", force: true do |t|
+    t.integer  "host_id"
+    t.integer  "user_id"
     t.string   "activity",   default: "visit", null: false
     t.boolean  "old_visit",  default: false,   null: false
     t.datetime "created_at"
@@ -45,8 +47,8 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   add_index "hosts", ["guid"], name: "index_hosts_on_guid", unique: true
 
   create_table "messages", force: true do |t|
-    t.integer  "host_id",                     null: false
-    t.integer  "user_id",                     null: false
+    t.integer  "host_id"
+    t.integer  "user_id"
     t.string   "text",                        null: false
     t.string   "created_by", default: "host", null: false
     t.datetime "created_at"
@@ -54,23 +56,23 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   end
 
   create_table "playlist_songs", force: true do |t|
-    t.integer  "playlist_id", null: false
-    t.integer  "song_id",     null: false
+    t.integer  "playlist_id"
+    t.integer  "song_id"
     t.integer  "rank",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "playlists", force: true do |t|
-    t.integer  "host_id",    null: false
+    t.integer  "host_id"
     t.string   "title",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "song_queue_users", force: true do |t|
-    t.integer  "song_queue_id",                 null: false
-    t.integer  "user_id",                       null: false
+    t.integer  "user_id"
+    t.integer  "song_queue_id"
     t.boolean  "like",          default: false
     t.boolean  "dislike",       default: false
     t.datetime "created_at"
@@ -78,9 +80,9 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   end
 
   create_table "song_queues", force: true do |t|
-    t.integer  "host_id",                              null: false
-    t.integer  "song_id",                              null: false
+    t.integer  "host_id"
     t.integer  "user_id"
+    t.integer  "song_id"
     t.string   "message"
     t.boolean  "message_approved", default: true
     t.string   "priority",         default: "normal",  null: false
@@ -90,7 +92,7 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   end
 
   create_table "songs", force: true do |t|
-    t.integer  "host_id",                 null: false
+    t.integer  "host_id"
     t.string   "title",                   null: false
     t.string   "artist"
     t.string   "album"

@@ -1,9 +1,9 @@
 class CreateSongQueues < ActiveRecord::Migration
   def change
     create_table :song_queues do |t|
-      t.integer :host_id, null: false
-      t.integer :song_id, null: false
-      t.integer :user_id
+      t.belongs_to :host
+      t.belongs_to :user
+      t.belongs_to :song
       t.string :message
       t.boolean :message_approved, default: true
       t.string :priority, null: false, default: 'normal'

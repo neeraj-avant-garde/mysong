@@ -1,7 +1,7 @@
 class CreateSongs < ActiveRecord::Migration
   def change
     create_table :songs do |t|
-      t.integer :host_id, null: false
+      t.belongs_to :host
       t.string :title, null: false
       t.string :artist
       t.string :album
