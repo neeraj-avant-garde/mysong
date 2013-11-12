@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
 
   # GET /playlists

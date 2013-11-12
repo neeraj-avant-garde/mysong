@@ -15,7 +15,7 @@ Mysong::Application.routes.draw do
 
   resources :users
 
-  resources :hosts, defaults: {format: :json}
+  resources :hosts, defaults: {format: :html}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
