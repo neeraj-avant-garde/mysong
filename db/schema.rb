@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20131111134916) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "slogan"
+    t.string   "device"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 20131111134916) do
     t.string   "longitude"
     t.string   "latitude"
     t.string   "privilege",    default: "normal", null: false
+    t.string   "device"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

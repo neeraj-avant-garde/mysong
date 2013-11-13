@@ -20,6 +20,7 @@ class CreateHosts < ActiveRecord::Migration
       t.string :facebook
       t.string :twitter
       t.string :slogan
+      t.string :device
 
       t.timestamps
     end

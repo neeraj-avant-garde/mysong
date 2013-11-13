@@ -7,10 +7,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :longitude
       t.string :latitude
       t.string :privilege, null: false, default: 'normal'
+      t.string :device
 
       t.timestamps
     end
-    add_index :users, :guid, unique: true
+    add_index :users, :guid,  unique: true
     add_index :users, :phone, unique: true
   end
 end
