@@ -1,5 +1,4 @@
 class HostsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
   before_action :set_host, only: [:show, :edit, :update, :destroy]
 
   # GET /hosts
@@ -33,7 +32,7 @@ class HostsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @host }
       else
         format.html { render action: 'new' }
-        format.json { render json: @host.errors, json: params, status: :unprocessable_entity }
+        format.json { render json: @host.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,6 +69,6 @@ class HostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_params
-      params.require(:host).permit(:guid, :email, :password, :address, :area, :city, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan)
+      params.require(:host).permit(:guid, :email, :password, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan)
     end
 end

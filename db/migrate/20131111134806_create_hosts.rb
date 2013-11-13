@@ -7,6 +7,9 @@ class CreateHosts < ActiveRecord::Migration
       t.string :address, null: false
       t.string :area
       t.string :city, null: false
+      t.integer :postcode
+      t.string :state
+      t.string :country
       t.string :verification
       t.string :longitude
       t.string :latitude

@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :longitude
       t.string :latitude
       t.string :privilege, null: false, default: 'normal'
-      t.string :status
 
       t.timestamps
     end

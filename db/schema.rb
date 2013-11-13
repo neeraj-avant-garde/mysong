@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   create_table "host_users", force: true do |t|
     t.integer  "host_id"
     t.integer  "user_id"
-    t.string   "activity",   default: "visit", null: false
-    t.boolean  "old_visit",  default: false,   null: false
+    t.string   "activity",    default: "visit", null: false
+    t.string   "user_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20131111134916) do
     t.string   "address",          null: false
     t.string   "area"
     t.string   "city",             null: false
+    t.integer  "postcode"
+    t.string   "state"
+    t.string   "country"
     t.string   "verification"
     t.string   "longitude"
     t.string   "latitude"
@@ -108,7 +111,6 @@ ActiveRecord::Schema.define(version: 20131111134916) do
     t.string   "longitude"
     t.string   "latitude"
     t.string   "privilege",    default: "normal", null: false
-    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

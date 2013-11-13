@@ -4,7 +4,7 @@ class CreateHostUsers < ActiveRecord::Migration
       t.belongs_to :host
       t.belongs_to :user
       t.string :activity, null: false, default: 'visit'
-      t.boolean :old_visit, null: false, default: false
+      t.string :user_status
 
       t.timestamps
     end

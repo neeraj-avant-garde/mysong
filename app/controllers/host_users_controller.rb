@@ -69,6 +69,6 @@ class HostUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_user_params
-      params.require(:host_user).permit(:activity, :old_visit)
+      params.require(:host_user).permit(:host_id, :user_id, :activity, :user_status)
     end
 end

@@ -1,21 +1,21 @@
 Mysong::Application.routes.draw do
-  resources :host_users
+  resources :host_users, defaults: {format: :json}
 
-  resources :song_queue_users
+  resources :song_queue_users, defaults: {format: :json}
 
-  resources :song_queues
+  resources :song_queues, defaults: {format: :json}
 
-  resources :playlist_songs
+  resources :playlist_songs, defaults: {format: :json}
 
-  resources :playlists
+  resources :playlists, defaults: {format: :json}
 
-  resources :songs
+  resources :songs, defaults: {format: :json}
 
-  resources :messages
+  resources :messages, defaults: {format: :json}
 
-  resources :users
+  resources :users, defaults: {format: :json}
 
-  resources :hosts, defaults: {format: :html}
+  resources :hosts, defaults: {format: :json}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
