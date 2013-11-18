@@ -1,4 +1,4 @@
 json.array!(@hosts) do |host|
-  json.extract! host, :app_id, :email, :password, :address, :area, :city, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan
+  json.extract! host, :name, :app_id, :email, :password, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :device_id, :is_logged_in, :session_id
   json.url host_url(host, format: :json)
 end
