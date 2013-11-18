@@ -5,6 +5,7 @@ class CreateHosts < ActiveRecord::Migration
       t.string :app_id, null: false
       t.string :email, null: false
       t.string :password, null: false
+      t.string :avatar
       t.string :address
       t.string :area
       t.string :city

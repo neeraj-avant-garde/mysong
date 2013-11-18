@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    params[:user][:avatar] = upload_and_return_file_name(params[:user][:avatar]) if params[:user][:avatar]
+
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -40,6 +42,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    params[:user][:avatar] = upload_and_return_file_name(params[:user][:avatar]) if params[:user][:avatar]
+  
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -69,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :guid, :phone, :verification, :longitude, :latitude, :privilege)
+      params.require(:user).permit(:name, :app_id, :phone, :verification, :longitude, :latitude, :privilege, :avatar)
     end
 end

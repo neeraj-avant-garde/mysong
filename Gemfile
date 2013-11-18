@@ -25,6 +25,9 @@ gem 'turbolinks', '1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.5.2'
 
+#image upload
+gem "mini_magick", '3.6.0'
+
 group :development, :test do
   #To generate entity relationship diagram of models
   # Requuire 'graphviz' to work, Installation: http://rails-erd.rubyforge.org/install.html

@@ -24,6 +24,8 @@ class HostsController < ApplicationController
   # POST /hosts
   # POST /hosts.json
   def create
+    params[:host][:avatar] = upload_and_return_file_name(params[:host][:avatar]) if params[:host][:avatar]
+
     @host = Host.new(host_params)
 
     respond_to do |format|
@@ -42,6 +44,8 @@ class HostsController < ApplicationController
   # PATCH/PUT /hosts/1
   # PATCH/PUT /hosts/1.json
   def update
+    params[:host][:avatar] = upload_and_return_file_name(params[:host][:avatar]) if params[:host][:avatar]
+
     respond_to do |format|
       if @host.update(host_params)
         format.html { redirect_to @host, notice: 'Host was successfully updated.' }
@@ -71,6 +75,6 @@ class HostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_params
-      params.require(:host).permit(:name, :app_id, :email, :password, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :device_id, :session_id, :is_logged_in)
+      params.require(:host).permit(:name, :app_id, :email, :password, :avatar, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :device_id, :session_id, :is_logged_in)
     end
 end

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20131118062038) do
     t.string   "app_id",                           null: false
     t.string   "email",                            null: false
     t.string   "password",                         null: false
+    t.string   "avatar"
     t.string   "address"
     t.string   "area"
     t.string   "city"
@@ -119,18 +120,18 @@ ActiveRecord::Schema.define(version: 20131118062038) do
 
   create_table "users", force: true do |t|
     t.string   "name",                            null: false
-    t.string   "guid",                            null: false
+    t.string   "app_id",                          null: false
     t.string   "phone",                           null: false
     t.string   "verification",                    null: false
     t.string   "longitude"
     t.string   "latitude"
     t.string   "privilege",    default: "normal", null: false
     t.string   "device"
+    t.string   "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["guid"], name: "index_users_on_guid", unique: true
   add_index "users", ["phone"], name: "index_users_on_phone", unique: true
 
 end

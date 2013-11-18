@@ -3,13 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>Guid</th>
+      <th>App ID</th>
       <th>Phone</th>
       <th>Verification</th>
       <th>Longitude</th>
       <th>Latitude</th>
       <th>Privilege</th>
-      <th>Status</th>
+      <th>Avatar</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,13 +19,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.guid %></td>
+        <td><%= user.app_id %></td>
         <td><%= user.phone %></td>
         <td><%= user.verification %></td>
         <td><%= user.longitude %></td>
         <td><%= user.latitude %></td>
         <td><%= user.privilege %></td>
-        <td><%= user.status %></td>
+        <td><%= user.avatar %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
