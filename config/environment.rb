@@ -15,11 +15,11 @@ Mysong::Application.initialize!
 #}
 
 ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
+  :address        => 'smtp.gmail.com',
   :port           => 587,
   :authentication => :login,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
+  :user_name      => 'nnneerajjj',
+  :password       => 'meramail',
   :domain         => 'heroku.com',
   :enable_starttls_auto => true
 }
