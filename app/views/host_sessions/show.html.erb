@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @host_session.host_id %>
+</p>
+
+<p>
+  <strong>Host session:</strong>
+  <%= @host_session.host_session_id %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @host_session.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_host_session_path(@host_session) %> |
+<%= link_to 'Back', host_sessions_path %>

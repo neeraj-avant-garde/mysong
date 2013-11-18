@@ -1,4 +1,6 @@
 Mysong::Application.routes.draw do
+  resources :host_sessions
+
   resources :host_users, defaults: {format: :json}
 
   resources :song_queue_users, defaults: {format: :json}

@@ -1,0 +1,31 @@
+<h1>Listing host_sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Host session</th>
+      <th>Is active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @host_sessions.each do |host_session| %>
+      <tr>
+        <td><%= host_session.host_id %></td>
+        <td><%= host_session.host_session_id %></td>
+        <td><%= host_session.is_active %></td>
+        <td><%= link_to 'Show', host_session %></td>
+        <td><%= link_to 'Edit', edit_host_session_path(host_session) %></td>
+        <td><%= link_to 'Destroy', host_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Host session', new_host_session_path %>

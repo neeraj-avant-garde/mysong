@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   before_save :init_data
 
+  validates :name, presence: true, length: {minimum: 3}
   validates :phone, presence: true, uniqueness: true
 
   def init_data

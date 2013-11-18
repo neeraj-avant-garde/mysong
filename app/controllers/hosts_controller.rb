@@ -28,6 +28,7 @@ class HostsController < ApplicationController
 
     respond_to do |format|
       if @host.save
+        ActionMailer::Base.mail(:from => "do-not-reply@example.com", :to => "#{@host.email}", :subject => "MySong app complete registration", :body => "Hi #{@host.name}, <br /> Verification code: #{@host.verification}<br /> To complete registration process please enter above verification code in your MySong app.").deliver
         format.html { redirect_to @host, notice: 'Host was successfully created.' }
         format.json { render action: 'show', status: :created, location: @host }
       else
@@ -69,6 +70,6 @@ class HostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_params
-      params.require(:host).permit(:guid, :email, :password, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan)
+      params.require(:host).permit(:name, :app_id, :email, :password, :address, :area, :city, :postcode, :state, :country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :device_id, :session_id, :is_logged_in)
     end
 end

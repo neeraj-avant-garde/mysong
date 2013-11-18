@@ -11,24 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111134916) do
+ActiveRecord::Schema.define(version: 20131118062038) do
+
+  create_table "host_sessions", force: true do |t|
+    t.integer  "host_id",                        null: false
+    t.string   "host_session_id",                null: false
+    t.boolean  "is_active",       default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "host_sessions", ["host_session_id"], name: "index_host_sessions_on_host_session_id", unique: true
 
   create_table "host_users", force: true do |t|
-    t.integer  "host_id"
-    t.integer  "user_id"
-    t.string   "activity",    default: "visit", null: false
-    t.string   "user_status"
+    t.integer  "host_id",                        null: false
+    t.integer  "user_id",                        null: false
+    t.string   "activity",    default: "visit",  null: false
+    t.string   "user_status", default: "active", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hosts", force: true do |t|
-    t.string   "guid",             null: false
-    t.string   "email",            null: false
-    t.string   "password",         null: false
-    t.string   "address",          null: false
+    t.string   "name"
+    t.string   "app_id",                           null: false
+    t.string   "email",                            null: false
+    t.string   "password",                         null: false
+    t.string   "address"
     t.string   "area"
-    t.string   "city",             null: false
+    t.string   "city"
     t.integer  "postcode"
     t.string   "state"
     t.string   "country"
@@ -36,19 +47,20 @@ ActiveRecord::Schema.define(version: 20131111134916) do
     t.string   "longitude"
     t.string   "latitude"
     t.datetime "subscription_end"
-    t.integer  "max_requests",     null: false
-    t.integer  "max_queue",        null: false
-    t.decimal  "proximity",        null: false
+    t.integer  "max_requests",     default: 5,     null: false
+    t.integer  "max_queue",        default: 10,    null: false
+    t.decimal  "proximity",        default: 100.0, null: false
     t.string   "facebook"
     t.string   "twitter"
     t.string   "slogan"
-    t.string   "device"
+    t.string   "device_id",                        null: false
+    t.boolean  "is_logged_in",     default: true,  null: false
+    t.string   "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "hosts", ["email"], name: "index_hosts_on_email", unique: true
-  add_index "hosts", ["guid"], name: "index_hosts_on_guid", unique: true
 
   create_table "messages", force: true do |t|
     t.integer  "host_id"
@@ -106,6 +118,7 @@ ActiveRecord::Schema.define(version: 20131111134916) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "name",                            null: false
     t.string   "guid",                            null: false
     t.string   "phone",                           null: false
     t.string   "verification",                    null: false
