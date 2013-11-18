@@ -1,1 +1,1 @@
-json.extract! @host, :guid, :email, :password, :address, :area, :city, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :created_at, :updated_at
+json.extract! @host, :app_id, :email, :password, :address, :area, :city, :postcode, :state,:country, :verification, :longitude, :latitude, :subscription_end, :max_requests, :max_queue, :proximity, :facebook, :twitter, :slogan, :device_id, :is_logged_in, :session_id, :created_at, :updated_at
