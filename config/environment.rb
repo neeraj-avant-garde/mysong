@@ -14,12 +14,12 @@ Mysong::Application.initialize!
 #  :enable_starttls_auto => true
 #}
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.gmail.com',
-  :port           => 587,
-  :authentication => :login,
-  :user_name      => 'nnneerajjj',
-  :password       => 'meramail',
-  :domain         => 'heroku.com',
-  :enable_starttls_auto => true
-}
+#ActionMailer::Base.smtp_settings = {
+#  :address        => 'smtp.gmail.com',
+#  :port           => 587,
+#  :authentication => :login,
+#  :user_name      => 'nnneerajjj',
+#  :password       => 'meramail',
+#  :domain         => 'heroku.com',
+#  :enable_starttls_auto => true
+#}
