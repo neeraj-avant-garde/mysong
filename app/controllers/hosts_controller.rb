@@ -28,7 +28,7 @@ class HostsController < ApplicationController
 
     respond_to do |format|
       if @host.save
-        ActionMailer::Base.mail(:from => "do-not-reply@example.com", :to => "#{@host.email}", :subject => "MySong app complete registration", :body => "Hi #{@host.name}, <br /> Verification code: #{@host.verification}<br /> To complete registration process please enter above verification code in your MySong app.").deliver
+        ActionMailer::Base.mail(:from => "app19369326@heroku.com", :to => "#{@host.email}", :subject => "MySong app complete registration", :body => "Hi #{@host.name}, <br /> Verification code: #{@host.verification}<br /> To complete registration process please enter above verification code in your MySong app.").deliver
         format.html { redirect_to @host, notice: 'Host was successfully created.' }
         format.json { render json: @host, status: :created}
       else
