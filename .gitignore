@@ -16,4 +16,4 @@
 /tmp
 .rbenv-gemsets
 *~
-#/public/uploads/*
+/public/uploads/*
