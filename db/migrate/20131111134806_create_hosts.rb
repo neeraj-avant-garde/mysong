@@ -23,7 +23,7 @@ class CreateHosts < ActiveRecord::Migration
       t.string :twitter
       t.string :slogan
       t.string :device_id, null: false
-      t.boolean :is_logged_in, null: false, default: true
+      t.boolean :is_logged_in, null: false, default: false
       t.string :session_id
 
       t.timestamps
