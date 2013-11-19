@@ -33,10 +33,18 @@ class HostsController < ApplicationController
         Notifier.send_signup_email(@host).deliver
         #ActionMailer::Base.mail(:from => "app19369326@heroku.com", :to => "#{@host.email}", :subject => "MySong app complete registration", :body => "Hi #{@host.name}, <br /> Verification code: #{@host.verification}<br /> To complete registration process please enter above verification code in your MySong app.").deliver
         format.html { redirect_to @host, notice: 'Host was successfully created.' }
-        format.json { render json: @host, status: :created}
+        format.json {
+          @utter = ["success"=> 1, "message"=> 'You are registered successfully', "data"=> @host ]
+          render json: @utter, 
+          status: :created
+        }
       else
         format.html { render action: 'new' }
-        format.json { render json: @host.errors, status: :unprocessable_entity }
+        format.json { 
+          @utter = ["success"=> 0, "message"=> 'Please review errors', "data"=> @host.errors ]
+          render json: @utter, 
+          status: :unprocessable_entity 
+        }
       end
     end
   end
