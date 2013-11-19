@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20131118062038) do
     t.string   "twitter"
     t.string   "slogan"
     t.string   "device_id",                        null: false
-    t.boolean  "is_logged_in",     default: true,  null: false
+    t.boolean  "is_logged_in",     default: false, null: false
     t.string   "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
